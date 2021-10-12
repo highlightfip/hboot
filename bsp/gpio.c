@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:08:45
- * @LastEditTime: 2021-10-12 22:57:15
+ * @LastEditTime: 2021-10-12 23:12:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\gpio.c
@@ -16,10 +16,10 @@ static void close(void *handle);
 
 void gpio_opr_init(void *dev_obj_opr)
 {
-    ((GPIO_opr *)dev_obj_opr)->open = open;
-    ((GPIO_opr *)dev_obj_opr)->read = read;
-    ((GPIO_opr *)dev_obj_opr)->write = write;
-    ((GPIO_opr *)dev_obj_opr)->close = close;
+    ((GPIO_OPR_T *)dev_obj_opr)->open = open;
+    ((GPIO_OPR_T *)dev_obj_opr)->read = read;
+    ((GPIO_OPR_T *)dev_obj_opr)->write = write;
+    ((GPIO_OPR_T *)dev_obj_opr)->close = close;
 }
 /**
  * @description: 

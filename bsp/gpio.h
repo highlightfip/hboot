@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:09:34
- * @LastEditTime: 2021-10-12 23:03:19
+ * @LastEditTime: 2021-10-12 23:14:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\gpio.h
@@ -23,7 +23,7 @@
 #define GPIO_Speed_MAX                 GPIO_Speed_50MHz
 #define GPIO_MODE_IS(mode)             ((mode) == GPIO_Mode_Out_OD ||  (mode) == GPIO_Mode_Out_PP)?GPIO_OUT:\
                                        (((mode) == GPIO_Mode_IPU ||  (mode) == GPIO_Mode_IPD)?GPIO_IN:-1) 
-
+#define uint32_t                       unsigned int
 /**
  * @brief GPIO 
  */

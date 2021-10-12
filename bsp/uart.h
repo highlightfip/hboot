@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:17
- * @LastEditTime: 2021-10-11 13:24:39
+ * @LastEditTime: 2021-10-12 20:00:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.h
@@ -12,18 +12,48 @@
 
 #include "stm32f10x.h"
 #include "stm32f10x_usart.h"
+#include "stm32f10x_rcc.h"
+#include "stm32f10x_gpio.h"
 
+/** 
+  * @brief  UART Init structure definition  
+  */
 
-typedef struct {
-    void (*open)(void *dev_obj, void *handle);
-    void (*write)(void *inf, void *handle);
-    void (*read)(void *inf, void *handle);
-    void (*close)(void *handle);
-} UART_opr;
+typedef struct  
+{
+	UART_NAME_T	      uart_name;        /*!< uart name */
+  GPIO_PIN_T      	uart_gpio[RX+1];  /*!< uart pins */
+  uint32_t          uart_clock;       /*!< RCC clock */
+  USART_TypeDef*    uart_x;           /*!< uart x */
+  USART_InitTypeDef uart_arg;         /*!< uart config */
+}UART_T;
 
-static void open(void *UART_inf, void *UART_opt);
-static void write(void *UART_inf, void *UART_opt);
-static void read(void *UART_inf, void *UART_opt);
-static void close(void *UART_inf, void *UART_opt);
+/** 
+  * @brief  UART opr structure definition  
+  */
+typedef struct  
+{
+	void (*open)(void * dev_obj);			    /*!< device init */
+	int8_t (*write)(void * dev_obj,void *data);	/*!< device write */
+	int8_t (*read)(void * dev_obj,void *data);	/*!< device read */
+	void (*close)(void * dev_obj);		        /*!< device close */
+}UART_OPR_T;
+
+/** @defgroup UART_Exported_Constants
+  * @{
+  */
+#define UART_GROUP_NUM 1
+
+ /**
+  * @}
+  */
+
+ /** @defgroup UART_Exported_Functions
+  * @{
+  */
+extern void uart_init(void *dev_obj);
+/**
+  * @}
+  */
 
 #endif

@@ -1,12 +1,12 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:08:45
- * @LastEditTime: 2021-10-12 23:12:21
+ * @LastEditTime: 2021-10-13 20:49:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\gpio.c
  */
-#include "gpio.h"
+
 #include "bsp.h"
 
 static void open(void *dev_obj, void *handle);

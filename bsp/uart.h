@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:17
- * @LastEditTime: 2021-10-12 20:00:06
+ * @LastEditTime: 2021-10-13 20:55:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.h
@@ -10,8 +10,24 @@
 #ifndef _UART_H
 #define _UART_H
 
+#include "stm32f10x_usart.h"
 #include "bsp.h"
-#include "gpio.h"
+
+/** 
+  * @brief  UART pin name definition  
+  */
+typedef enum  
+{
+	TX,RX
+}UART_PIN_NAME_T;
+
+/** 
+  * @brief  UART dev name definition  
+  */
+typedef enum  
+{
+	UART1,UART2
+}UART_NAME_T;
 
 /** 
   * @brief  UART Init structure definition  

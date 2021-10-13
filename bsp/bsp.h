@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-10-12 12:43:34
- * @LastEditTime: 2021-10-12 23:06:59
+ * @LastEditTime: 2021-10-13 20:48:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\bsp.h
@@ -11,6 +11,8 @@
 #define _BSP_H
 
 #include "gpio.h"
+#include "stm32f10x.h"
+#include "stdint.h"
 
 #define BSP_PIN_NUM_MAX 1
 /** 

@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:08:45
- * @LastEditTime: 2021-10-13 20:49:33
+ * @LastEditTime: 2021-10-13 21:32:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\gpio.c
@@ -105,5 +105,6 @@ static int8_t read(void * handle,void * data)
 
 static void close(void *handle)
 {
-
+	GPIO_INFO_T *gpio_obj = &(((GPIO_HANDLE_T *)handle)->gpio_info);
+	
 }

@@ -10,10 +10,8 @@
 #ifndef _UART_H
 #define _UART_H
 
-#include "stm32f10x.h"
-#include "stm32f10x_usart.h"
-#include "stm32f10x_rcc.h"
-#include "stm32f10x_gpio.h"
+#include "bsp.h"
+#include "gpio.h"
 
 /** 
   * @brief  UART Init structure definition  

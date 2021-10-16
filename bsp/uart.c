@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:23
- * @LastEditTime: 2021-10-12 20:02:12
+ * @LastEditTime: 2021-10-16 19:15:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.c
@@ -56,12 +56,23 @@ void gpio_init(UART_opr *uart_opr)
 
 static void open(void *dev_obj, void *handle)
 {
-    
+	UART_PIN_NAME_T pin_name = TX;
+	GPIO_OPR_T gpio_opr;
+
+	/*open clock*/
+	RCC_APB2PeriphClockCmd(G_UART_GROUP[(uint32_t)dev_obj].uart_clock, ENABLE);
+	/* init uart pins*/
+	gpio_init(&gpio_opr);
+	while(pin_name <= RX) {
+		gpio_opr.open(&(G_UART_GROUP[(uint32_t)dev_obj].uart_gpio[pin_name].pin));
+	}
+	USART_Init(G_UART_GROUP[(uint32_t)dev_obj].uart_x, &G_UART_GROUP[(uint32_t)dev_obj].uart_arg);
+    USART_Cmd(G_UART_GROUP[(uint32_t)dev_obj].uart_x, ENABLE);
 }
 
 static int8_t write(void *inf, void *handle)
 {
-
+	
 }
 
 static int8_t read(void *inf, void *handle)

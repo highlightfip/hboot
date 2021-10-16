@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:23
- * @LastEditTime: 2021-10-16 19:15:28
+ * @LastEditTime: 2021-10-16 19:31:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.c
@@ -71,8 +71,15 @@ static void open(void *dev_obj, void *handle)
 }
 
 static int8_t write(void *inf, void *handle)
-{
+{	
+	int8_t result_state = 0;
 	
+	USART_ClearFlag(G_UART_GROUP[(uint32_t)dev_obj].uart_x,USART_FLAG_TC);
+	USART_SendData(G_UART_GROUP[(uint32_t)dev_obj].uart_x,*((uint16_t *)data));
+	while(!USART_GetFlagStatus(G_UART_GROUP[(uint32_t)dev_obj].uart_x,USART_FLAG_TC));
+	result_state = 1;
+
+	return result_state;
 }
 
 static int8_t read(void *inf, void *handle)

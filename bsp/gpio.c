@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:08:45
- * @LastEditTime: 2021-10-16 19:44:43
+ * @LastEditTime: 2021-10-20 16:27:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\gpio.c
@@ -55,7 +55,7 @@ static void open(void *dev_obj, void *handle)
  * @param {void *} data
  * @return operate state
  */
-static int8_t write(void * handle,void * data)
+static int8_t write(void *handle,void *data)
 {
 	GPIO_INFO_T *gpio_obj = &(((GPIO_HANDLE_T *)handle)->gpio_info);
 	BitAction gpio_opr =  (BitAction)((uint32_t)(data));

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-10-11 18:43:57
- * @LastEditTime: 2021-10-20 15:07:07
+ * @LastEditTime: 2021-10-20 15:36:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \kbootd:\github workshop\hboot\periph\led.c
@@ -40,7 +40,7 @@ void led_opr_init(void *dev_obj_opr)
     ((LED_OPR_T *)dev_obj_opr)->close = close;
 }
 
-static void open(void * dev_obj,void *handle)
+static void open(void *dev_obj,void *handle)
 {
     LED_HANDLE_T *lh = (LED_HANDLE_T *)handle;
 
@@ -50,17 +50,37 @@ static void open(void * dev_obj,void *handle)
     write(lh, OFF);
 }
 
-static int8_t write(void * hanled,void * data)
+static int8_t write(void * handle,void * data)
 {
+    LED_HANDLE_T *lh = (LED_HANDLE_T *)handle;
+    int8_t result_state = 0;
+    uint32_t *opr;
 
+    if(!lh->led_info.led_bsp.dev_pins[0].effe_level)
+    {
+        opr = (uint32_t *)(!(uint32_t)((uint32_t *)(data)));
+    }
+    else
+    {
+        opr = (uint32_t *)(data);
+    }
+    result_state = lh->gpio_handle.gpio_opr.write(&(lh->gpio_handle), opr);
+
+    return result_state;
 }
 
-static int8_t read(void * hanled,void * data)
+static int8_t read(void * handle,void * data)
 {
+    LED_HANDLE_T *lh = (LED_HANDLE_T *)handle;
+    int8_t result_state = 0;
 
+    result_state = lh->gpio_handle.gpio_opr.read(&lh->gpio_handle, data);
+    return result_state;
 }
 
-static void close(void * hanled)
+static void close(void * handle)
 {
-
+    LED_HANDLE_T *lh = (LED_HANDLE_T *)handle;
+    lh->gpio_handle.gpio_opr.close(&lh->gpio_handle);
+    
 }

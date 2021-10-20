@@ -1,14 +1,16 @@
 /*
  * @Author: your name
  * @Date: 2021-10-11 18:43:57
- * @LastEditTime: 2021-10-20 15:06:42
+ * @LastEditTime: 2021-10-20 15:21:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \kbootd:\github workshop\hboot\periph\led.h
  */
 
-#include "bsp.h"
+#ifndef _LED_H
+#define _LED_H
 
+#include "bsp.h"
 
 typedef uint32_t * LED_NAME_T;
 typedef uint32_t * LED_ACTION_T;

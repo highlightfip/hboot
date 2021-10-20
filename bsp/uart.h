@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:17
- * @LastEditTime: 2021-10-16 19:58:46
+ * @LastEditTime: 2021-10-20 16:56:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.h
@@ -12,6 +12,7 @@
 
 #include "stm32f10x_usart.h"
 #include "bsp.h"
+#include "stdarg.h"
 
 /** 
   * @brief  UART pin name definition  
@@ -57,6 +58,11 @@ typedef struct
   * @{
   */
 #define UART_GROUP_NUM 1
+
+#define PUTC(a) {\
+    while(RESET == USART_GetFlagStatus(USART1, USART_FLAG_TC));\
+    USART_SendData(USART1, a);\
+}
 
  /**
   * @}

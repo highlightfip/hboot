@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-10-12 12:43:34
- * @LastEditTime: 2021-10-13 20:48:22
+ * @LastEditTime: 2021-10-20 19:27:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\bsp.h
@@ -61,5 +61,8 @@ typedef struct
 	uint8_t             dev_pin_num;                /*!< device pin num */
 	// uint8_t     _RESERVE_[3];
 } BSP_BASE_T;
+
+extern void delay_us(u32 x);
+extern void delay_ms(u32 x);
 
 #endif

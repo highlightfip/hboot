@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:23
- * @LastEditTime: 2021-10-20 22:58:57
+ * @LastEditTime: 2021-10-20 23:10:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.c
@@ -85,7 +85,11 @@ static int8_t write(void *dev_obj, void *data)
 
 static int8_t read(void * dev_obj,void *data)
 {
-	
+	int8_t result_state = 0;
+
+	/* working */
+
+	return result_state;
 }
 
 static void close(void *dev_obj)

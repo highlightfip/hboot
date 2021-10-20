@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:17
- * @LastEditTime: 2021-10-13 20:55:19
+ * @LastEditTime: 2021-10-16 19:58:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.h
@@ -66,6 +66,7 @@ typedef struct
   * @{
   */
 extern void uart_init(void *dev_obj);
+static void uart_print(void *data);
 /**
   * @}
   */

@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:17
- * @LastEditTime: 2021-10-20 16:56:33
+ * @LastEditTime: 2021-10-20 22:54:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.h
@@ -37,10 +37,10 @@ typedef enum
 typedef struct  
 {
 	UART_NAME_T	      uart_name;        /*!< uart name */
-  GPIO_PIN_T      	uart_gpio[RX+1];  /*!< uart pins */
-  uint32_t          uart_clock;       /*!< RCC clock */
-  USART_TypeDef*    uart_x;           /*!< uart x */
-  USART_InitTypeDef uart_arg;         /*!< uart config */
+	GPIO_PIN_T      	uart_gpio[RX+1];  /*!< uart pins */
+	uint32_t          uart_clock;       /*!< RCC clock */
+	USART_TypeDef*    uart_x;           /*!< uart x */
+	USART_InitTypeDef uart_arg;         /*!< uart config */
 }UART_T;
 
 /** 
@@ -72,7 +72,6 @@ typedef struct
   * @{
   */
 extern void uart_init(void *dev_obj);
-static void uart_print(void *data);
 /**
   * @}
   */

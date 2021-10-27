@@ -1,7 +1,7 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:23
- * @LastEditTime: 2021-10-20 23:10:10
+ * @LastEditTime: 2021-10-26 19:31:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hboot\bsp\uart.c

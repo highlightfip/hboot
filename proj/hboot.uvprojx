@@ -568,6 +568,11 @@
               <FileType>1</FileType>
               <FilePath>..\bsp\iic.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\bsp.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

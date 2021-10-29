@@ -1,10 +1,10 @@
-/*
- * @Author: highlight
- * @Date: 2021-10-10 19:11:17
- * @LastEditTime: 2021-10-20 22:54:43
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \hboot\bsp\uart.h
+/*** 
+ * @Author       : highlight
+ * @Date         : 2021-10-12 23:19:34
+ * @LastEditTime : 2021-10-29 19:10:20
+ * @LastEditors  : highlight
+ * @Description  : usart oprate
+ * @FilePath     : \kbootd:\github workshop\hboot\bsp\uart.h
  */
 
 #ifndef _UART_H
@@ -33,7 +33,6 @@ typedef enum
 /** 
   * @brief  UART Init structure definition  
   */
-
 typedef struct  
 {
 	UART_NAME_T	      uart_name;        /*!< uart name */

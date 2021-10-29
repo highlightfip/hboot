@@ -1,10 +1,10 @@
 /*
  * @Author: highlight
  * @Date: 2021-10-10 19:11:23
- * @LastEditTime: 2021-10-26 19:31:57
- * @LastEditors: Please set LastEditors
+ * @LastEditTime : 2021-10-29 18:57:18
+ * @LastEditors  : highlight
  * @Description: In User Settings Edit
- * @FilePath: \hboot\bsp\uart.c
+ * @FilePath     : \kbootd:\github workshop\hboot\bsp\uart.c
  */
 
 #include "uart.h"
@@ -44,12 +44,13 @@ static UART_T G_UART_GROUP[UART_GROUP_NUM] =
 	}
 };
 
-void gpio_init(UART_OPR_T *uart_opr)
+
+extern void uart_init(void *uart_opr)
 {
-    uart_opr->open = open;
-    uart_opr->read = read;
-    uart_opr->write = write;
-    uart_opr->close = close;
+    ((UART_OPR_T *)uart_opr)->open = open;
+    ((UART_OPR_T *)uart_opr)->read = read;
+    ((UART_OPR_T *)uart_opr)->write = write;
+    ((UART_OPR_T *)uart_opr)->close = close;
 }
 
 

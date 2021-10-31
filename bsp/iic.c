@@ -1,7 +1,7 @@
 /*
  * @Author       : highlight
  * @Date         : 2021-10-12 23:19:34
- * @LastEditTime : 2021-10-29 22:56:58
+ * @LastEditTime : 2021-10-31 12:35:23
  * @LastEditors  : highlight
  * @Description  : 
  * @FilePath     : \kbootd:\github workshop\hboot\bsp\iic.c
@@ -26,7 +26,7 @@ static I2C_T G_I2C_GROUP[I2C_GROUP_NUM] =
     RCC_APB1Periph_I2C1,
     I2C1,
     {
-        /*I2C_ClockSpeed*/,
+        /*I2C_ClockSpeed*/
         I2C_Mode_I2C,
         I2C_DutyCycle_16_9,
         I2C_Ack_Disable,

@@ -1,7 +1,7 @@
 /*** 
  * @Author       : highlight
  * @Date         : 2021-10-12 23:19:34
- * @LastEditTime : 2021-10-29 22:59:34
+ * @LastEditTime : 2021-10-31 12:31:54
  * @LastEditors  : highlight
  * @Description  : 
  * @FilePath     : \kbootd:\github workshop\hboot\bsp\iic.h
@@ -35,7 +35,7 @@ typedef struct {
 	int8_t (*write)(void * dev_obj,void *data);	/*!< device write */
 	int8_t (*read)(void * dev_obj,void *data);	/*!< device read */
 	void (*close)(void * dev_obj);		        /*!< device close */
-}I2C_OPR_T;
+} I2C_OPR_T;
 
 
 #endif
